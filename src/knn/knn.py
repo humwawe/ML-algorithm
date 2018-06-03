@@ -24,10 +24,8 @@ class KNNClassifier:
 
     def predict(self, X_predict):
         """给定待预测数据集X_predict，返回标示X_predict的结果向量"""
-        assert self._X_train is not None and self._y_train is not None, \
-            "mush fit before predict"
-        assert self._X_train.shape[1] == X_predict.shape[1], \
-            "the feature number of x must be equal to X_train"
+        assert self._X_train is not None and self._y_train is not None, "mush fit before predict"
+        assert self._X_train.shape[1] == X_predict.shape[1], "the feature number of x must be equal to X_train"
 
         y_predict = [self._predict(x) for x in X_predict]
         return np.array(y_predict)
